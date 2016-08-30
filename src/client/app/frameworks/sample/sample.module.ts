@@ -4,12 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+// material
+import { MaterialModule } from '../core/material.module';
+
 // libs
 import { StoreModule } from '@ngrx/store';
 
 // app
-import { ToolbarComponent } from './components/toolbar.component';
-import { NavbarComponent } from './components/navbar.component';
 import { nameListReducer, NameListService } from './services/name-list.service';
 import { MultilingualModule } from '../i18n/multilingual.module';
 import { multilingualReducer, MultilingualStateI } from '../i18n/services/multilingual.service';
@@ -33,18 +34,11 @@ export interface AppStoreI {
     StoreModule.provideStore({
       i18n: multilingualReducer,
       names: nameListReducer
-    })
-  ],
-  declarations: [
-    ToolbarComponent,
-    NavbarComponent
+    }),
+    MaterialModule
   ],
   providers: [
     NameListService
-  ],
-  exports: [
-    ToolbarComponent,
-    NavbarComponent
   ]
 })
 export class SampleModule {

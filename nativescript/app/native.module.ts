@@ -15,8 +15,6 @@ import { TNSTranslateLoader } from 'nativescript-ng2-translate/nativescript-ng2-
 // app
 import { WindowService, ConsoleService, RouterExtensions } from './app/frameworks/core/index';
 import { NSAppComponent } from './pages/app/app.component';
-import { AboutComponent } from './app/components/about/about.component';
-import { HomeComponent } from './app/components/home/home.component';
 import { routes } from './app/components/app.routes';
 
 // feature modules
@@ -48,8 +46,6 @@ import { NS_ANALYTICS_PROVIDERS } from './shared/nativescript/index';
   ],
   declarations: [
     NSAppComponent,
-    // AboutComponent,
-    // HomeComponent,
     NS_ROUTER_DIRECTIVES
   ],
   providers: [

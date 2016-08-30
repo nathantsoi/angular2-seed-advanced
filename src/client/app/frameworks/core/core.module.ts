@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
+// material
+import { MaterialModule } from './material.module'
+
 // app
 import { PlatformDirective } from './directives/platform.directive';
 import { ConsoleService } from './services/console.service';
 import { LogService } from './services/log.service';
 import { RouterExtensions } from './services/router-extensions';
 import { WindowService } from './services/window.service';
+import { MultilingualModule } from '../i18n/multilingual.module';
 
 interface ICoreModuleOptions {
   window?: any;
@@ -25,7 +29,8 @@ interface ICoreModuleOptions {
   imports: [
     CommonModule,
     RouterModule,
-    HttpModule
+    HttpModule,
+    MaterialModule
   ],
   declarations: [
     PlatformDirective
