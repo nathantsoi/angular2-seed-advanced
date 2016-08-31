@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 
 // app
 import { AppComponent } from './app/components/app.component';
+import { HomeComponent } from './app/components/home/home.component';
+import { AboutComponent } from './app/components/about/about.component';
 import { routes } from './app/components/app.routes';
 
 // feature modules
@@ -48,7 +50,11 @@ if ('<%= TARGET_DESKTOP %>' === 'true') {
     MaterialModule,
     SampleModule
   ],
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent
+  ],
   providers: [
     {
       provide: APP_BASE_HREF,
