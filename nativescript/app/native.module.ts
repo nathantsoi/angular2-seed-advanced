@@ -22,6 +22,7 @@ import { CoreModule } from './app/frameworks/core/core.module';
 import { AnalyticsModule } from './app/frameworks/analytics/analytics.module';
 import { MultilingualModule } from './app/frameworks/i18n/multilingual.module';
 import { SampleModule } from './app/frameworks/sample/sample.module';
+import { MaterialModule } from '../../src/client/app/frameworks/core/material.module';
 
 // {N} custom app specific
 import { WindowNative } from './shared/core/index';
@@ -40,6 +41,7 @@ import { NS_ANALYTICS_PROVIDERS } from './shared/nativescript/index';
       useFactory: () => new TNSTranslateLoader('assets/i18n')
     }),
     SampleModule,
+    MaterialModule,
     NativeScriptModule,
     NativeScriptFormsModule,
     NativeScriptRouterModule.forRoot(routes)

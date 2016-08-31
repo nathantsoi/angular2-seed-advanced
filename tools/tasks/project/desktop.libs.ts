@@ -12,7 +12,8 @@ export = () => {
     'node_modules/lodash/**/*',
     'node_modules/ng2-translate/**/*',
     'node_modules/@ngrx/**/*',
-    'node_modules/zone.js/**/*'
+    'node_modules/zone.js/**/*',
+    'node_modules/@angular2-material/**/*'
   ];
   return gulp.src(src, { base: 'node_modules' })
     .pipe(gulp.dest(join(APP_DEST + '/node_modules')));
