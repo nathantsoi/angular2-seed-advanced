@@ -397,4 +397,3 @@ Please see the [CONTRIBUTING](https://github.com/NathanWalker/angular2-seed-adva
 ## License
 
 MIT
-

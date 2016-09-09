@@ -7,6 +7,7 @@
   <title><%= APP_TITLE %></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- inject:css -->
   <!-- endinject -->
 
@@ -52,12 +53,20 @@
   <!-- inject:js -->
   <!-- endinject -->
 
+  <link rel="import" href="components.html">
+  <style is="custom-style">
+    body {
+      @apply(--layout-fullbleed);
+      @apply(--paper-font-body1);
+      background: var(--primary-background-color);
+      color: var(--primary-text-color);
+    }
+  </style>
+
   <% if (ENV === 'dev') { %>
   <script>
-  System.import('<%= BOOTSTRAP_MODULE %>')
-    .catch(function (e) {
-      console.error(e,
-        'Report this error at https://github.com/NathanWalker/angular2-seed-advanced/issues');
+   document.addEventListener('WebComponentsReady', function() {
+      System.import('<%= BOOTSTRAP_MODULE %>');
     });
   </script>
   <% } %>

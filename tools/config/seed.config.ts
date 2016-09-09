@@ -359,7 +359,7 @@ export class SeedConfig {
       '@angular/platform-browser-dynamic/testing':
         'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
-
+      '@vaadin/angular2-polymer': `${this.NPM_BASE}@vaadin/angular2-polymer/index.js`,
       'rxjs/*': 'node_modules/rxjs/*',
       'app/*': '/app/*',
       // For test config
@@ -491,30 +491,30 @@ export class SeedConfig {
      */
     'browser-sync': {
       middleware: [require('connect-history-api-fallback')({
-        index: `${this.APP_BASE}index.html`,
-        rewrites: [
-          {
-            from: new RegExp(`^${this.NPM_BASE}.*$`),
-            to: (context:any) => context.parsedUrl.pathname
-          },
-          {
-            from: new RegExp(`^\/${this.BOOTSTRAP_DIR}\/.*$`),
-            to: (context:any) => context.parsedUrl.pathname
-          },
-          {
-            from: new RegExp(`^${this.APP_BASE}${this.APP_SRC}\/.*$`),
-            to: (context:any) => context.parsedUrl.pathname
-          },
-          {
-            from: new RegExp(`^${this.ASSETS_SRC.replace(this.APP_SRC, '')}\/.*$`),
-            to: (context:any) => context.parsedUrl.pathname
-          },
-          {
-            from: new RegExp(`^${this.CSS_DEST.replace(this.APP_DEST, '')}\/.*$`),
-            to: (context:any) => `/${slash(join(this.APP_DEST, context.parsedUrl.pathname))}`
-          }
-        ],
-        disableDotRule: true
+        index: `${this.APP_BASE}index.html`
+        // rewrites: [
+        //   {
+        //     from: new RegExp(`^${this.NPM_BASE}.*$`),
+        //     to: (context:any) => context.parsedUrl.pathname
+        //   },
+        //   {
+        //     from: new RegExp(`^\/${this.BOOTSTRAP_DIR}\/.*$`),
+        //     to: (context:any) => context.parsedUrl.pathname
+        //   },
+        //   {
+        //     from: new RegExp(`^${this.APP_BASE}${this.APP_SRC}\/.*$`),
+        //     to: (context:any) => context.parsedUrl.pathname
+        //   },
+        //   {
+        //     from: new RegExp(`^${this.ASSETS_SRC.replace(this.APP_SRC, '')}\/.*$`),
+        //     to: (context:any) => context.parsedUrl.pathname
+        //   },
+        //   {
+        //     from: new RegExp(`^${this.CSS_DEST.replace(this.APP_DEST, '')}\/.*$`),
+        //     to: (context:any) => `/${slash(join(this.APP_DEST, context.parsedUrl.pathname))}`
+        //   }
+        // ],
+        // disableDotRule: true
       })],
       port: this.PORT,
       startPath: this.APP_BASE,

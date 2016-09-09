@@ -1,5 +1,20 @@
-<div platform>
-  <sd-toolbar></sd-toolbar>
-  <sd-navbar></sd-navbar>
+<app-drawer-layout>
+  <app-drawer>
+    <paper-toolbar class="sidebar">
+      <div class="title"></div>
+      <paper-icon-button icon="search" on-tap="searchAction"></paper-icon-button>
+    </paper-toolbar>
+    <sd-navbar></sd-navbar>
+  </app-drawer>
+  <app-header-layout fullbleed>
+    <app-header>
+      <app-toolbar class="main">
+        <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+        <div main-title></div>
+      </app-toolbar>
+    </app-header>
+
   <router-outlet></router-outlet>
-</div>
+
+  </app-header-layout>
+</app-drawer-layout>
